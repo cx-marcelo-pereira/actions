@@ -2,8 +2,20 @@ on: [push]
 
 jobs:
   integration:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     name: 'Integration'
+    steps:
+      - name: "Checkout"
+        uses: cx-marcelo-pereira/actions/git-checkout@main
+      - name: "Helm setup"
+        uses: cx-marcelo-pereira/actions/helm-setup@main
+        with:
+          version: 'v4.0.4'
+      - name: "GitHub release"
+        uses: cx-marcelo-pereira/actions/github-release@main
+  integration-arm:
+    runs-on: ubuntu-24.04-arm
+    name: 'Integration ARM'
     steps:
       - name: "Checkout"
         uses: cx-marcelo-pereira/actions/git-checkout@main
