@@ -11,3 +11,5 @@ jobs:
         uses: cx-marcelo-pereira/actions/helm-setup@main
         with:
           version: 'v4.0.4'
+      - name: "GitHub release"
+        uses: cx-marcelo-pereira/actions/github-release@main
