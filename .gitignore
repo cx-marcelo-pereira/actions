@@ -1,0 +1,22 @@
+## macos attribute / metadata files
+.DS_Store
+
+## devspace related files
+.devspace
+
+## environment definition
+.env*
+!.env.example
+
+## temporary files
+/tmp/*
+!/tmp/.gitkeep
+
+## helm chart dependencies
+/charts/*/charts/*
+
+## bruno related files
+dev/bruno/platform/node_modules
+
+## binary files
+**/*.tgz
