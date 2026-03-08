@@ -1,0 +1,22 @@
+name: 'Helm: setup'
+description: 'Setup Helm on action runner'
+inputs:
+  chart:
+    description: 'The path to the chart'
+    required: true
+  dependencies-to-update:
+    description: 'a list of dependencies to be updated'
+    required: false
+  version:  
+    description: 'The desired helm version'
+    required: true
+    default: 'v4.0.5'
+outputs: {}
+runs:
+  using: 'composite'
+  steps:
+    - name: echo inputs
+      run: |
+        echo "version: ${{ inputs.version }}"
+        echo "chart: ${{ inputs.chart }}"
+        echo "dependencies-to-update: '${{ inputs.dependencies-to-update }}'"
