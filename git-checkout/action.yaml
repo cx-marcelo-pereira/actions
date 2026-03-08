@@ -1,0 +1,9 @@
+name: 'Git: checkout'
+description: 'Checkout repository'
+inputs: {}
+outputs: {}
+runs:
+  using: 'composite'
+  steps:
+    - name: "Checkout"
+      uses: actions/checkout@v5
