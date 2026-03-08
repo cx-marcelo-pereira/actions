@@ -13,11 +13,5 @@ inputs:
     default: 'v4.0.5'
 outputs: {}
 runs:
-  using: 'composite'
-  steps:
-    - name: echo inputs
-      shell: bash
-      run: |
-        echo "version: ${{ inputs.version }}"
-        echo "chart: ${{ inputs.chart }}"
-        echo "dependencies-to-update: '${{ inputs.dependencies-to-update }}'"
+  using: "node24"
+  main: "./main.js"
