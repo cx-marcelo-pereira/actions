@@ -4,15 +4,15 @@ const child_process = require('child_process')
 function getBinaryPath(actionPath, runnerType) {
   switch (runnerType) {
     case 'linux-x64':
-      return `${actionPath}/dist/github-release-linux-amd64`
+      return `${actionPath}/dist/helm-publish-linux-amd64`
     case 'linux-arm64':
-      return `${actionPath}/dist/github-release-linux-arm64`
+      return `${actionPath}/dist/helm-publish-linux-arm64`
     default:
       throw new Error(`Unsupported runner type: ${runnerType}`)
   }
 }
 
-const logPrefix = '[github-release]'
+const logPrefix = '[helm-publish]'
 const actionPath = __dirname
 const runnerPlatform = os.platform().toLowerCase()
 const runnerArchitecture = os.arch().toLowerCase()
