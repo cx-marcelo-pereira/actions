@@ -17,8 +17,8 @@ jobs:
         uses: cx-marcelo-pereira/actions/helm-publish@main
         with:
           chart: 'path/to/chart'
-          dependencies-to-update: 
-          - dependency1
-          - dependency2
-          - dependency3
+          dependencies-to-update:  |-
+            - dependency1
+            - dependency2
+            - dependency3
           version: 'v4.0.4'
