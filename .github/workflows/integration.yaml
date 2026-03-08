@@ -18,7 +18,7 @@ jobs:
         with:
           chart: 'path/to/chart'
           dependencies-to-update: 
-            - dependency1
-            - dependency2
-            - dependency3
+          - dependency1
+          - dependency2
+          - dependency3
           version: 'v4.0.4'
