@@ -14,6 +14,8 @@ jobs:
           user_email: ${{ secrets.GH_USER_EMAIL }}
           user_commit_signing_key: ${{ secrets.GH_USER_SIGNING_KEY }}
           user_pat: ${{ secrets.GH_USER_PAT }}
+      - name: "NodeJS: setup"
+        uses: cx-marcelo-pereira/actions/nodejs-setup@main
       - name: "Docker: setup"
         uses: cx-marcelo-pereira/actions/docker-setup@main
         with:

@@ -1,0 +1,21 @@
+name: 'NodeJS: setup'
+description: 'Setup NodeJS'
+inputs:
+  version:
+    description: 'The NodeJS version to use'
+    default: '22.x'
+outputs: {}
+runs:
+  using: 'composite'
+  steps:
+    ## setup nodejs
+    - name: 'Setup: nodejs'
+      uses: actions/setup-node@v6
+      with:
+        node-version: ${{ inputs.version }}
+    
+
+
+
+
+
