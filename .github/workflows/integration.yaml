@@ -7,4 +7,11 @@ jobs:
     steps:
       - name: "Checkout"
         uses: cx-marcelo-pereira/actions/github-checkout@main
-     
+      - name: "Setup: github"
+        uses: cx-marcelo-pereira/actions/github-setup@main
+        with:
+          user_name: ${{ secrets.GH_USER }}
+          user_email: ${{ secrets.GH_USER_EMAIL }}
+          user_commit_signing_key: ${{ secrets.GH_USER_SIGNING_KEY }}
+          user_pat: ${{ secrets.GH_USER_PAT }}
+          

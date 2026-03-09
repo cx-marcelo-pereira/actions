@@ -1,0 +1,41 @@
+name: 'Git: setup'
+description: 'Setup GitHub environment'
+inputs:
+  user_name:
+    description: 'The github user name'
+    required: true
+  user_email:
+    description: 'The github user email'
+    required: true
+  user_commit_signing_key:
+    description: 'The github user ssh key used to sign commits'
+    required: true
+  user_pat:
+    description: 'The github user pat'
+    required: true
+outputs: {}
+runs:
+  using: 'composite'
+  steps:
+   ## setup user commit signing key
+    - name: "Github: setup commit signing key"
+      shell: bash
+      run: |
+        mkdir -p ~/.ssh
+        echo -e "${{ inputs.user_commit_signing_key }}" > ~/.ssh/${{ inputs.user_name }}
+        chmod 700 ~/.ssh
+        chmod 600 ~/.ssh/${{ inputs.user_name }}
+    ## setup user information and force signed commits
+    - name: "Github: setup git user information"
+      shell: bash
+      run: |
+        git config --local commit.gpgsign true
+        git config --local gpg.format ssh 
+        git config --local user.name  "${{ inputs.user_name }}"
+        git config --local user.email "${{ inputs.user_email }}"
+        git config --local user.signingkey ~/.ssh/${{ inputs.user_name }}
+    ## set up user authentication
+    - name: "Github: setup git user authentication for https"
+      shell: bash
+      run: |-
+        echo -e "machine github.com\n\tlogin ${{ inputs.user_name }}\n\tpassword ${{ inputs.user_pat }}" >> ~/.netrc
