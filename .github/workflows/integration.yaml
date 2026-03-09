@@ -37,4 +37,4 @@ jobs:
           echo "#############"
           helm dependency update charts/test-app
           helm package charts/test-app
-          ls -lrt 
+          helm push test-app-25.0.1.tgz oci://ghcr.io/cx-marcelo-pereira/helm-charts 
