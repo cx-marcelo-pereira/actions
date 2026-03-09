@@ -28,4 +28,7 @@ jobs:
           registry: ghcr.io
           username: ${{ secrets.GH_USER }}
           password: ${{ secrets.GH_USER_PAT }}
-          
+      - name: "Helm: update chart"
+        shell: bash
+        run: |
+          cat ${{ needs.parse.outputs.chartdir }}/Chart.yaml | sed "s/0.0.0/${{ needs.parse.outputs.version }}/g"
