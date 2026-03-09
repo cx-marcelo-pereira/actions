@@ -35,6 +35,6 @@ jobs:
           echo "#############"
           cat charts/test-app/Chart.yaml
           echo "#############"
-          # helm dependency update charts/test-app
-          # helm package charts/test-app
-          # ls -lrt 
+          helm dependency update charts/test-app
+          helm package charts/test-app
+          ls -lrt 
