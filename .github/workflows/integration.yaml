@@ -6,19 +6,5 @@ jobs:
     name: 'Integration'
     steps:
       - name: "Checkout"
-        uses: cx-marcelo-pereira/actions/git-checkout@main
-      - name: "Helm setup"
-        uses: cx-marcelo-pereira/actions/helm-setup@main
-        with:
-          version: 'v4.0.4'
-      - name: "GitHub release"
-        uses: cx-marcelo-pereira/actions/github-release@main
-      - name: "Helm publish"
-        uses: cx-marcelo-pereira/actions/helm-publish@main
-        with:
-          chart: 'path/to/chart'
-          dependencies-to-update:  |-
-            - dependency1
-            - dependency2
-            - dependency3
-          version: 'v4.0.4'
+        uses: cx-marcelo-pereira/actions/github-checkout@main
+     

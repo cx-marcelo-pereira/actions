@@ -1,7 +1,0 @@
-name: 'GitHub: release'
-description: 'Create a GitHub release'
-inputs: {}
-outputs: {}
-runs:
-  using: "node24"
-  main: "./main.js"
