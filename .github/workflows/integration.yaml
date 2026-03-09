@@ -31,4 +31,4 @@ jobs:
       - name: "Helm: update chart"
         shell: bash
         run: |
-          cat ${{ needs.parse.outputs.chartdir }}/Chart.yaml | sed "s/0.0.0/${{ needs.parse.outputs.version }}/g"
+          cat charts/test-app/Chart.yaml | sed "s/0.0.0/${{ needs.parse.outputs.version }}/g"
