@@ -17,13 +17,13 @@ jobs:
       - name: "Docker: setup"
         uses: cx-marcelo-pereira/actions/docker-setup@main
         with:
-          registry: ghcr.io/cxservices
+          registry: ghcr.io
           username: ${{ secrets.GH_USER }}
           password: ${{ secrets.GH_USER_PAT }}
       - name: "Helm: setup"
         uses: cx-marcelo-pereira/actions/helm-setup@main
         with:
-          registry: ghcr.io/cxservices
+          registry: ghcr.io
           username: ${{ secrets.GH_USER }}
           password: ${{ secrets.GH_USER_PAT }}
           
