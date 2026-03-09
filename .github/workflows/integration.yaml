@@ -32,6 +32,9 @@ jobs:
         shell: bash
         run: |
           cat charts/test-app/Chart.yaml | sed "s/0.0.0/25.0.1/g" > charts/test-app/Chart.yaml
+          echo "#############"
+          cat charts/test-app/Chart.yaml
+          echo "#############"
           helm dependency update charts/test-app
           helm package charts/test-app
           ls -lrt 
